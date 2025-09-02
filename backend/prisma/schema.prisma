@@ -1,0 +1,13 @@
+// Contents of schema.prisma
+model User {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  email String  @unique
+}
+
+model Organization {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  logo  String?
+  users User[]
+}
